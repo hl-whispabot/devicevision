@@ -1,0 +1,1202 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme:
+        {
+          extend:
+          {
+            fontFamily:
+            {
+              'sans': ['Inter', 'system-ui', 'sans-serif'],
+            },
+            colors:
+            {
+              'brand-purple': '#7c3aed',
+              'brand-blue': '#2563eb',
+              'brand-cyan': '#06b6d4',
+              'dark-bg': '#0f172a',
+              'dark-card': '#1e293b',
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap"
+      rel="stylesheet">
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <script>
+      window.FontAwesomeConfig = {
+        autoReplaceSvg: 'nest'
+      };
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+      ::-webkit-scrollbar
+      {
+        display: none;
+      }
+
+      body
+      {
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      }
+
+      .glass-effect
+      {
+        background: rgba(30, 41, 59, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .gradient-border
+      {
+        position: relative;
+        background: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(37, 99, 235, 0.1));
+      }
+
+      .gradient-border::before
+      {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(135deg, #7c3aed, #2563eb);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+
+      .hover-lift
+      {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .hover-lift:hover
+      {
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
+      }
+
+      .pulse-ring
+      {
+        animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      @keyframes pulse-ring
+      {
+
+        0%,
+        100%
+        {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        50%
+        {
+          opacity: 0.5;
+          transform: scale(1.05);
+        }
+      }
+    </style>
+    <style data-grapesjs-styles="true">
+      *
+      {
+        box-sizing: border-box;
+      }
+
+      body
+      {
+        margin: 0;
+      }
+
+      ::-webkit-scrollbar
+      {
+        display: none;
+      }
+
+      body
+      {
+        background-image: linear-gradient(135deg, rgb(15, 23, 42) 0%, rgb(30, 41, 59) 100%);
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-size: auto;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-origin: padding-box;
+        background-clip: border-box;
+        background-color: transparent;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        margin-left: 0px;
+      }
+
+      .glass-effect
+      {
+        background-image: none;
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-size: auto;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-origin: padding-box;
+        background-clip: border-box;
+        background-color: rgba(30, 41, 59, 0.6);
+        border-top-width: 1px;
+        border-right-width: 1px;
+        border-bottom-width: 1px;
+        border-left-width: 1px;
+        border-top-style: solid;
+        border-right-style: solid;
+        border-bottom-style: solid;
+        border-left-style: solid;
+        border-top-color: rgba(255, 255, 255, 0.1);
+        border-right-color: rgba(255, 255, 255, 0.1);
+        border-bottom-color: rgba(255, 255, 255, 0.1);
+        border-left-color: rgba(255, 255, 255, 0.1);
+        border-image-source: none;
+        border-image-slice: 100%;
+        border-image-width: 1;
+        border-image-outset: 0;
+        border-image-repeat: stretch;
+      }
+
+      .gradient-border
+      {
+        position: relative;
+        background-image: linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(37, 99, 235, 0.1));
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-size: auto;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-origin: padding-box;
+        background-clip: border-box;
+        background-color: transparent;
+      }
+
+      .gradient-border::before
+      {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        border-top-left-radius: inherit;
+        border-top-right-radius: inherit;
+        border-bottom-right-radius: inherit;
+        border-bottom-left-radius: inherit;
+        padding-top: 2px;
+        padding-right: 2px;
+        padding-bottom: 2px;
+        padding-left: 2px;
+        background-image: linear-gradient(135deg, rgb(124, 58, 237), rgb(37, 99, 235));
+        background-position-x: 0%;
+        background-position-y: 0%;
+        background-size: auto;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-origin: padding-box;
+        background-clip: border-box;
+        background-color: transparent;
+        -webkit-mask-source-type: auto, auto;
+        -webkit-mask-clip: content-box, border-box;
+        mask-image: linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px), linear-gradient(rgb(255, 255, 255) 0px, rgb(255, 255, 255) 0px);
+        -webkit-mask-position-x: 0%, 0%;
+        -webkit-mask-position-y: 0%, 0%;
+        mask-size: auto, auto;
+        mask-repeat: repeat, repeat;
+        mask-origin: content-box, border-box;
+        mask-clip: content-box, border-box;
+        mask-mode: match-source, match-source;
+        mask-border-source: none;
+        mask-border-slice: 0;
+        mask-border-width: auto;
+        mask-border-outset: 0;
+        mask-border-repeat: stretch;
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+
+      .hover-lift
+      {
+        transition-duration: 0.3s, 0.3s;
+        transition-timing-function: ease, ease;
+        transition-delay: 0s, 0s;
+        transition-behavior: normal, normal;
+        transition-property: transform, box-shadow;
+      }
+
+      .hover-lift:hover
+      {
+        transform: translateY(-4px);
+        box-shadow: rgba(124, 58, 237, 0.2) 0px 20px 40px;
+      }
+
+      .pulse-ring
+      {
+        animation-duration: 2s;
+        animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        animation-direction: normal;
+        animation-fill-mode: none;
+        animation-play-state: running;
+        animation-name: pulse-ring;
+      }
+
+      *
+      {
+        box-sizing: border-box;
+      }
+
+      #audience-chart
+      {
+        height: 350px;
+      }
+
+      #engagement-chart
+      {
+        height: 350px;
+      }
+
+      #conversion-chart
+      {
+        height: 350px;
+      }
+
+      #location-chart
+      {
+        height: 350px;
+      }
+
+      #ikij29
+      {
+        width: 200px;
+      }
+
+      #ij54vg
+      {
+        width: 200px;
+      }
+
+      @keyframes pulse-ring
+      {
+
+        0%,
+        100%
+        {
+          opacity: 1;
+          transform: scale(1);
+        }
+
+        50%
+        {
+          opacity: 0.5;
+          transform: scale(1.05);
+        }
+      }
+    </style>
+  </head>
+
+  <body class="font-sans text-white antialiased">
+    <header id="header"
+      class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10">
+      <nav
+        class="max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between">
+        <div class="flex items-center space-x-3"><img alt="all_white.png"
+            src="data:image/png;base64,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"
+            id="ikij29"></div>
+        <div class="hidden lg:flex items-center space-x-8"><a href="#solutions"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"><i
+              class="fa-solid fa-lightbulb-on"></i><span>Solutions</span></a><a
+            href="#capabilities"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"><i
+              class="fa-solid fa-database"></i><span>Capabilities</span></a><a
+            href="#insights"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"><i
+              class="fa-solid fa-chart-mixed"></i><span>Insights</span></a><a
+            href="#use-cases"
+            class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"><i
+              class="fa-solid fa-briefcase"></i><span>Use Cases</span></a></div>
+        <div class="flex items-center space-x-4"></div>
+      </nav>
+    </header>
+    <main class="pt-20">
+      <section id="hero-section"
+        class="max-w-[1400px] mx-auto px-8 py-24 h-[720px] flex items-center">
+        <div class="grid lg:grid-cols-2 gap-16 items-center w-full">
+          <div class="space-y-8">
+            <div
+              class="inline-flex items-center space-x-2 px-4 py-2 glass-effect rounded-full">
+              <span
+                class="w-2 h-2 bg-green-400 rounded-full pulse-ring"></span><span
+                class="text-sm font-medium">AI-Powered Telco Intelligence</span>
+            </div>
+            <h1 class="text-6xl font-bold leading-tight">
+              Transform <span
+                class="bg-gradient-to-r from-brand-purple to-brand-cyan bg-clip-text text-transparent">Telco
+                Data</span> Into Marketing Gold
+            </h1>
+            <p class="text-xl text-gray-400 leading-relaxed">
+              Leverage real-time user behavior, preferences, location, and usage
+              patterns to power targeted marketing campaigns that convert. Turn
+              telecommunications data into your competitive advantage.
+            </p>
+            <div class="flex items-center space-x-4"><button
+                class="px-8 py-4 bg-gradient-to-r from-brand-purple to-brand-blue rounded-xl font-semibold text-lg hover-lift shadow-xl shadow-brand-purple/40 flex items-center space-x-2"><span>Contact
+                  Us</span><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+          <div class="relative">
+            <div
+              class="glass-effect rounded-3xl p-8 hover-lift shadow-2xl shadow-brand-purple/20">
+              <div class="flex items-center justify-between mb-6">
+                <h3 class="text-xl font-bold">Marketing Metrics</h3>
+              </div>
+              <div class="space-y-5">
+                <div
+                  class="flex items-center justify-between p-5 bg-gradient-to-r from-purple-500/10 to-blue-500/10 rounded-xl border border-purple-500/20">
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center shadow-lg">
+                      <i class="fa-solid fa-users text-2xl"></i></div>
+                    <div>
+                      <p class="text-sm text-gray-400 mb-1">Active Segments</p>
+                      <p class="text-3xl font-bold">847K</p>
+                    </div>
+                  </div>
+                  <div class="text-right"><span
+                      class="text-green-400 font-semibold flex items-center space-x-1"><i
+                        class="fa-solid fa-arrow-trend-up"></i><span>+12.5%</span></span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between p-5 bg-gradient-to-r from-blue-500/10 to-cyan-500/10 rounded-xl border border-blue-500/20">
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center shadow-lg">
+                      <i class="fa-solid fa-bullseye-arrow text-2xl"></i></div>
+                    <div>
+                      <p class="text-sm text-gray-400 mb-1">Campaign ROI</p>
+                      <p class="text-3xl font-bold">3.8x</p>
+                    </div>
+                  </div>
+                  <div class="text-right"><span
+                      class="text-green-400 font-semibold flex items-center space-x-1"><i
+                        class="fa-solid fa-arrow-trend-up"></i><span>+24%</span></span>
+                  </div>
+                </div>
+                <div
+                  class="flex items-center justify-between p-5 bg-gradient-to-r from-cyan-500/10 to-green-500/10 rounded-xl border border-cyan-500/20">
+                  <div class="flex items-center space-x-4">
+                    <div
+                      class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center shadow-lg">
+                      <i class="fa-solid fa-tower-cell text-2xl"></i></div>
+                    <div>
+                      <p class="text-sm text-gray-400 mb-1">Subscriber Base</p>
+                      <p class="text-3xl font-bold">20M</p>
+                    </div>
+                  </div>
+                  <div class="text-right"><span
+                      class="text-green-400 font-semibold flex items-center space-x-1"><i
+                        class="fa-solid fa-arrow-trend-up"></i><span>+8.3%</span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="solutions" class="max-w-[1400px] mx-auto px-8 py-24">
+        <div class="text-center mb-16">
+          <div
+            class="inline-block px-5 py-2 glass-effect rounded-full text-sm mb-6">
+            <span
+              class="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent font-bold">MARKETING
+              SOLUTIONS</span></div>
+          <h2 class="text-5xl font-bold mb-6">Data-Driven Marketing Intelligence
+          </h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">Harness telco data
+            to create hyper-targeted campaigns, optimize customer journeys, and
+            maximize marketing ROI</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div id="solution-targeted-marketing"
+            class="glass-effect rounded-2xl p-8 hover-lift gradient-border">
+            <div
+              class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6 shadow-lg shadow-purple-500/30">
+              <i class="fa-solid fa-crosshairs text-3xl"></i></div>
+            <h3 class="text-2xl font-bold mb-4">Targeted Marketing</h3>
+            <p class="text-gray-400 mb-6">Reach the right audience at the right
+              time with precision targeting based on real-time user behavior and
+              preferences.</p>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-purple-400 mt-1"></i><span
+                  class="text-sm">Behavioral segmentation engine</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-purple-400 mt-1"></i><span
+                  class="text-sm">Real-time audience profiling</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-purple-400 mt-1"></i><span
+                  class="text-sm">Predictive intent modeling</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-purple-400 mt-1"></i><span
+                  class="text-sm">Multi-channel orchestration</span></li>
+            </ul>
+          </div>
+          <div id="solution-contextual-marketing"
+            class="glass-effect rounded-2xl p-8 hover-lift gradient-border">
+            <div
+              class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-6 shadow-lg shadow-blue-500/30">
+              <i class="fa-solid fa-location-dot text-3xl"></i></div>
+            <h3 class="text-2xl font-bold mb-4">Contextual Marketing</h3>
+            <p class="text-gray-400 mb-6">Deliver personalized messages based on
+              location, time, and context to drive engagement and conversions.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-blue-400 mt-1"></i><span
+                  class="text-sm">Geo-location targeting</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-blue-400 mt-1"></i><span
+                  class="text-sm">Time-based campaign triggers</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-blue-400 mt-1"></i><span
+                  class="text-sm">Environmental context analysis</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-blue-400 mt-1"></i><span
+                  class="text-sm">Proximity-based offers</span></li>
+            </ul>
+          </div>
+          <div id="solution-usage-analytics"
+            class="glass-effect rounded-2xl p-8 hover-lift gradient-border">
+            <div
+              class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center mb-6 shadow-lg shadow-cyan-500/30">
+              <i class="fa-solid fa-chart-pie text-3xl"></i></div>
+            <h3 class="text-2xl font-bold mb-4">Usage Analytics</h3>
+            <p class="text-gray-400 mb-6">Understand customer behavior patterns
+              through comprehensive usage data analysis and insights.</p>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-cyan-400 mt-1"></i><span
+                  class="text-sm">Data consumption patterns</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-cyan-400 mt-1"></i><span
+                  class="text-sm">App usage insights</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-cyan-400 mt-1"></i><span
+                  class="text-sm">Network behavior tracking</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-cyan-400 mt-1"></i><span
+                  class="text-sm">Service adoption metrics</span></li>
+            </ul>
+          </div>
+          <div id="solution-customer-journey"
+            class="glass-effect rounded-2xl p-8 hover-lift gradient-border">
+            <div
+              class="w-16 h-16 rounded-xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center mb-6 shadow-lg shadow-green-500/30">
+              <i class="fa-solid fa-route text-3xl"></i></div>
+            <h3 class="text-2xl font-bold mb-4">Customer Journey Mapping</h3>
+            <p class="text-gray-400 mb-6">Visualize and optimize every
+              touchpoint in the customer lifecycle with data-driven journey
+              analytics.</p>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-green-400 mt-1"></i><span
+                  class="text-sm">Touchpoint visualization</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-green-400 mt-1"></i><span
+                  class="text-sm">Conversion path analysis</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-green-400 mt-1"></i><span
+                  class="text-sm">Drop-off identification</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-green-400 mt-1"></i><span
+                  class="text-sm">Journey optimization AI</span></li>
+            </ul>
+          </div>
+          <div id="solution-churn-prediction"
+            class="glass-effect rounded-2xl p-8 hover-lift gradient-border">
+            <div
+              class="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center mb-6 shadow-lg shadow-pink-500/30">
+              <i class="fa-solid fa-user-clock text-3xl"></i></div>
+            <h3 class="text-2xl font-bold mb-4">Churn Prevention</h3>
+            <p class="text-gray-400 mb-6">Predict and prevent customer churn
+              with AI-powered early warning systems and retention strategies.
+            </p>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-pink-400 mt-1"></i><span
+                  class="text-sm">Churn risk scoring</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-pink-400 mt-1"></i><span
+                  class="text-sm">Proactive retention campaigns</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-pink-400 mt-1"></i><span
+                  class="text-sm">Win-back automation</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-pink-400 mt-1"></i><span
+                  class="text-sm">Loyalty program optimization</span></li>
+            </ul>
+          </div>
+          <div id="solution-personalization"
+            class="glass-effect rounded-2xl p-8 hover-lift gradient-border">
+            <div
+              class="w-16 h-16 rounded-xl bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center mb-6 shadow-lg shadow-orange-500/30">
+              <i class="fa-solid fa-sparkles text-3xl"></i></div>
+            <h3 class="text-2xl font-bold mb-4">AI Personalization</h3>
+            <p class="text-gray-400 mb-6">Create individualized experiences at
+              scale with machine learning-powered personalization engine.</p>
+            <ul class="space-y-3">
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-orange-400 mt-1"></i><span
+                  class="text-sm">Dynamic content generation</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-orange-400 mt-1"></i><span
+                  class="text-sm">Product recommendations</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-orange-400 mt-1"></i><span
+                  class="text-sm">Personalized messaging</span></li>
+              <li class="flex items-start space-x-3"><i
+                  class="fa-solid fa-check text-orange-400 mt-1"></i><span
+                  class="text-sm">Offer optimization</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+      <section id="capabilities" class="max-w-[1400px] mx-auto px-8 py-24">
+        <div class="text-center mb-16">
+          <div
+            class="inline-block px-5 py-2 glass-effect rounded-full text-sm mb-6">
+            <span
+              class="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent font-bold">DATA
+              CAPABILITIES</span></div>
+          <h2 class="text-5xl font-bold mb-6">Enterprise-Grade Telco Data
+            Platform</h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">Process billions of
+            data points in real-time with our secure, scalable infrastructure
+          </p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <div id="capability-user-behavior"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-user-chart text-2xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3">User Behavior Analytics</h3>
+                <p class="text-gray-400 mb-4">Deep insights into customer
+                  actions, preferences, and patterns across all touchpoints and
+                  channels.</p>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-3 py-1.5 bg-purple-500/20 rounded-lg text-xs font-medium border border-purple-500/30">Click
+                    Patterns</span><span
+                    class="px-3 py-1.5 bg-purple-500/20 rounded-lg text-xs font-medium border border-purple-500/30">Session
+                    Analytics</span><span
+                    class="px-3 py-1.5 bg-purple-500/20 rounded-lg text-xs font-medium border border-purple-500/30">Engagement
+                    Metrics</span></div>
+              </div>
+            </div>
+          </div>
+          <div id="capability-location"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-map-marker-alt text-2xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3">Location Intelligence</h3>
+                <p class="text-gray-400 mb-4">Real-time geolocation data for
+                  hyper-local targeting and location-based marketing campaigns.
+                </p>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-3 py-1.5 bg-blue-500/20 rounded-lg text-xs font-medium border border-blue-500/30">GPS
+                    Tracking</span><span
+                    class="px-3 py-1.5 bg-blue-500/20 rounded-lg text-xs font-medium border border-blue-500/30">Geofencing</span><span
+                    class="px-3 py-1.5 bg-blue-500/20 rounded-lg text-xs font-medium border border-blue-500/30">Footfall
+                    Analysis</span></div>
+              </div>
+            </div>
+          </div>
+          <div id="capability-preferences"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-sliders text-2xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3">Preference Profiling</h3>
+                <p class="text-gray-400 mb-4">Build comprehensive preference
+                  profiles based on service usage, content consumption, and
+                  interactions.</p>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-3 py-1.5 bg-cyan-500/20 rounded-lg text-xs font-medium border border-cyan-500/30">Content
+                    Affinity</span><span
+                    class="px-3 py-1.5 bg-cyan-500/20 rounded-lg text-xs font-medium border border-cyan-500/30">Service
+                    Preferences</span><span
+                    class="px-3 py-1.5 bg-cyan-500/20 rounded-lg text-xs font-medium border border-cyan-500/30">Interest
+                    Tags</span></div>
+              </div>
+            </div>
+          </div>
+          <div id="capability-usage"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-xl bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-signal-stream text-2xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3">Usage Patterns</h3>
+                <p class="text-gray-400 mb-4">Analyze data consumption, network
+                  usage, and service utilization patterns for better targeting.
+                </p>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-3 py-1.5 bg-green-500/20 rounded-lg text-xs font-medium border border-green-500/30">Data
+                    Usage</span><span
+                    class="px-3 py-1.5 bg-green-500/20 rounded-lg text-xs font-medium border border-green-500/30">Peak
+                    Times</span><span
+                    class="px-3 py-1.5 bg-green-500/20 rounded-lg text-xs font-medium border border-green-500/30">Service
+                    Mix</span></div>
+              </div>
+            </div>
+          </div>
+          <div id="capability-billing"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-credit-card text-2xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3">Billing Intelligence</h3>
+                <p class="text-gray-400 mb-4">Leverage billing data, payment
+                  history, and spending patterns for revenue optimization.</p>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-3 py-1.5 bg-pink-500/20 rounded-lg text-xs font-medium border border-pink-500/30">ARPU
+                    Analysis</span><span
+                    class="px-3 py-1.5 bg-pink-500/20 rounded-lg text-xs font-medium border border-pink-500/30">Payment
+                    Behavior</span><span
+                    class="px-3 py-1.5 bg-pink-500/20 rounded-lg text-xs font-medium border border-pink-500/30">Upsell
+                    Signals</span></div>
+              </div>
+            </div>
+          </div>
+          <div id="capability-realtime"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4">
+              <div
+                class="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-bolt text-2xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-3">Real-Time Processing</h3>
+                <p class="text-gray-400 mb-4">Stream processing engine handling
+                  millions of events per second for instant decision-making.</p>
+                <div class="flex flex-wrap gap-2"><span
+                    class="px-3 py-1.5 bg-orange-500/20 rounded-lg text-xs font-medium border border-orange-500/30">Stream
+                    Analytics</span><span
+                    class="px-3 py-1.5 bg-orange-500/20 rounded-lg text-xs font-medium border border-orange-500/30">Event
+                    Processing</span><span
+                    class="px-3 py-1.5 bg-orange-500/20 rounded-lg text-xs font-medium border border-orange-500/30">Live
+                    Triggers</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="insights" class="max-w-[1400px] mx-auto px-8 py-24">
+        <div class="text-center mb-16">
+          <div
+            class="inline-block px-5 py-2 glass-effect rounded-full text-sm mb-6">
+            <span
+              class="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent font-bold">INSIGHTS
+              DASHBOARD</span></div>
+          <h2 class="text-5xl font-bold mb-6">Marketing Intelligence</h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">Visualize campaign
+            performance, audience segments, and conversion metrics</p>
+        </div>
+        <div class="grid lg:grid-cols-2 gap-8">
+          <div id="chart-card-audience"
+            class="glass-effect rounded-2xl p-6 hover-lift">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Audience Segmentation</h3>
+            </div>
+            <div id="audience-chart"></div>
+          </div>
+          <div id="chart-card-engagement"
+            class="glass-effect rounded-2xl p-6 hover-lift">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Campaign Engagement</h3>
+            </div>
+            <div id="engagement-chart"></div>
+          </div>
+          <div id="chart-card-conversion"
+            class="glass-effect rounded-2xl p-6 hover-lift">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Conversion Funnel</h3>
+              <div class="flex items-center space-x-2"><span
+                  class="text-green-400 text-sm font-semibold">+18.5%</span><i
+                  class="fa-solid fa-arrow-trend-up text-green-400"></i></div>
+            </div>
+            <div id="conversion-chart"></div>
+          </div>
+          <div id="chart-card-location"
+            class="glass-effect rounded-2xl p-6 hover-lift">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-xl font-bold">Location-Based Performance</h3>
+            </div>
+            <div id="location-chart"></div>
+          </div>
+        </div>
+      </section>
+      <section id="use-cases" class="max-w-[1400px] mx-auto px-8 py-24">
+        <div class="text-center mb-16">
+          <div
+            class="inline-block px-5 py-2 glass-effect rounded-full text-sm mb-6">
+            <span
+              class="bg-gradient-to-r from-brand-purple to-brand-blue bg-clip-text text-transparent font-bold">USE
+              CASES</span></div>
+          <h2 class="text-5xl font-bold mb-6">Real-World Applications</h2>
+          <p class="text-xl text-gray-400 max-w-3xl mx-auto">See how leading
+            enterprises leverage telco data for marketing success</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div id="usecase-retail"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4 mb-6">
+              <div
+                class="w-16 h-16 rounded-xl bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-store text-3xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-2">Retail &amp; E-commerce</h3>
+                <p class="text-sm text-gray-400">Drive foot traffic and online
+                  conversions</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6">Target shoppers based on location
+              proximity, browsing behavior, and purchase history. Send
+              personalized offers when customers are near stores or show high
+              purchase intent.</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="glass-effect rounded-xl p-4">
+                <p class="text-3xl font-bold text-purple-400 mb-1">42%</p>
+                <p class="text-xs text-gray-400">Increase in foot traffic</p>
+              </div>
+              <div class="glass-effect rounded-xl p-4">
+                <p class="text-3xl font-bold text-purple-400 mb-1">3.2x</p>
+                <p class="text-xs text-gray-400">Higher conversion rate</p>
+              </div>
+            </div>
+          </div>
+          <div id="usecase-finance"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4 mb-6">
+              <div
+                class="w-16 h-16 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-building-columns text-3xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-2">Financial Services</h3>
+                <p class="text-sm text-gray-400">Personalized banking
+                  experiences</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6">Identify high-value customers, predict
+              loan readiness, and deliver contextual financial product
+              recommendations based on spending patterns and life events.</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="glass-effect rounded-xl p-4">
+                <p class="text-3xl font-bold text-blue-400 mb-1">28%</p>
+                <p class="text-xs text-gray-400">Product adoption lift</p>
+              </div>
+              <div class="glass-effect rounded-xl p-4">
+                <p class="text-3xl font-bold text-blue-400 mb-1">65%</p>
+                <p class="text-xs text-gray-400">Lead quality improvement</p>
+              </div>
+            </div>
+          </div>
+          <div id="usecase-travel"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4 mb-6">
+              <div
+                class="w-16 h-16 rounded-xl bg-gradient-to-br from-cyan-500 to-cyan-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-plane text-3xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-2">Travel &amp; Hospitality
+                </h3>
+                <p class="text-sm text-gray-400">Contextual travel marketing</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6">Target travelers based on location
+              data, search behavior, and seasonal patterns. Deliver timely
+              offers for flights, hotels, and experiences when intent is
+              highest.</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="glass-effect rounded-xl p-4">
+                <p class="text-3xl font-bold text-cyan-400 mb-1">51%</p>
+                <p class="text-xs text-gray-400">Booking rate increase</p>
+              </div>
+              <div class="glass-effect rounded-xl p-4">
+                <p class="text-3xl font-bold text-cyan-400 mb-1">4.1x</p>
+                <p class="text-xs text-gray-400">Campaign ROI</p>
+              </div>
+            </div>
+          </div>
+          <div id="usecase-media"
+            class="glass-effect rounded-2xl p-8 hover-lift">
+            <div class="flex items-start space-x-4 mb-6">
+              <div
+                class="w-16 h-16 rounded-xl bg-gradient-to-br from-pink-500 to-pink-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                <i class="fa-solid fa-tv text-3xl"></i></div>
+              <div>
+                <h3 class="text-2xl font-bold mb-2">Media &amp; Entertainment
+                </h3>
+                <p class="text-sm text-gray-400">Content personalization at
+                  scale</p>
+              </div>
+            </div>
+            <p class="text-gray-400 mb-6">Understand content preferences,
+              viewing patterns, and engagement metrics to deliver personalized
+              recommendations and targeted content promotions.</p>
+            <div class="grid grid-cols-2 gap-4">
+              <div class="glass-effect rounded-xl p-4">
+                <p class="text-3xl font-bold text-pink-400 mb-1">38%</p>
+                <p class="text-xs text-gray-400">Engagement increase</p>
+              </div>
+              <div class="glass-effect rounded-xl p-4">
+                <p class="text-3xl font-bold text-pink-400 mb-1">2.8x</p>
+                <p class="text-xs text-gray-400">Subscription growth</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="cta-section" class="max-w-[1400px] mx-auto px-8 py-24">
+        <div
+          class="glass-effect rounded-3xl p-16 text-center hover-lift shadow-2xl shadow-brand-purple/20 relative overflow-hidden">
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10">
+          </div>
+          <div class="relative z-10">
+            <h2 class="text-5xl font-bold mb-6">Ready to Transform Your
+              Marketing Strategy?</h2>
+            <p class="text-xl text-gray-400 mb-10 max-w-3xl mx-auto">Join us to
+              drive data-driven marketing
+              decisions and maximize ROI</p>
+            <div
+              class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 mb-10">
+              <button
+                class="px-10 py-4 bg-gradient-to-r from-brand-purple to-brand-blue rounded-xl font-bold text-lg hover-lift shadow-xl shadow-brand-purple/40 flex items-center space-x-2"><span>Contact
+                  Us</span><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer" class="glass-effect border-t border-white/10 mt-24">
+      <div class="max-w-[1400px] mx-auto px-8 py-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
+          <div class="lg:col-span-2">
+            <div class="flex items-center space-x-3 mb-6">
+              <img alt="all_white.png"
+                src="data:image/png;base64,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"
+                id="ij54vg">
+            </div>
+            <p class="text-gray-400 mb-6 max-w-md">Transform telecommunications
+              data into actionable marketing intelligence. Power your campaigns
+              with real-time insights.</p>
+            <div class="flex items-center space-x-4"><a href="#"
+                class="w-11 h-11 glass-effect rounded-xl flex items-center justify-center hover-lift"><i
+                  class="fa-brands fa-linkedin"></i></a></div>
+          </div>
+          <div>
+            <h4 class="font-bold mb-5 text-lg">Product</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li><a href="#Solutions"
+                  class="hover:text-white transition-colors">Solutions</a></li>
+              <li><a href="#Capabilities"
+                  class="hover:text-white transition-colors">Capabilities</a></li>
+              <li><a href="#Insights"
+                  class="hover:text-white transition-colors">Insights</a></li>
+              <li><a href="#Use-Cases"
+                  class="hover:text-white transition-colors">Use Cases</a>
+              </li>
+              
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-5 text-lg">Company</h4>
+            <ul class="space-y-3 text-gray-400">
+              <li><a href="#" class="hover:text-white transition-colors">About
+                  Us</a></li>
+              
+              <li><a href="#"
+                  class="hover:text-white transition-colors">Contact</a></li>
+            </ul>
+          </div>
+          
+        </div>
+        <div
+          class="border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between">
+          <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2026 Device Vision. All
+            rights reserved.</p>
+          <div class="flex items-center space-x-8 text-sm text-gray-400"><a
+              href="#" class="hover:text-white transition-colors">Privacy
+              Policy</a><a href="#"
+              class="hover:text-white transition-colors">Terms of Service</a></div>
+        </div>
+      </div>
+    </footer>
+    <script>
+      window.addEventListener('load', function()
+      {
+        try
+        {
+          var audienceData = [
+          {
+            type: 'pie',
+            labels: ['High Intent', 'Engaged', 'Casual', 'New',
+              'At Risk'
+            ],
+            values: [28, 35, 22, 10, 5],
+            marker:
+            {
+              colors: ['#7c3aed', '#2563eb', '#06b6d4', '#10b981',
+                '#f59e0b'
+              ]
+            },
+            textinfo: 'label+percent',
+            textfont:
+            {
+              color: '#ffffff',
+              size: 12
+            },
+            hole: 0.5
+          }];
+
+          var audienceLayout = {
+            margin:
+            {
+              t: 20,
+              r: 20,
+              b: 20,
+              l: 20
+            },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            font:
+            {
+              color: '#ffffff'
+            },
+            showlegend: true,
+            legend:
+            {
+              x: 0,
+              y: 0,
+              orientation: 'v'
+            }
+          };
+
+          Plotly.newPlot('audience-chart', audienceData, audienceLayout,
+          {
+            responsive: true,
+            displayModeBar: false,
+            displaylogo: false
+          });
+
+          var engagementData = [
+          {
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Email',
+            x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            y: [42, 48, 55, 62, 58, 45, 38],
+            line:
+            {
+              color: '#7c3aed',
+              width: 3
+            }
+          },
+          {
+            type: 'scatter',
+            mode: 'lines',
+            name: 'SMS',
+            x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            y: [28, 32, 38, 45, 48, 42, 35],
+            line:
+            {
+              color: '#2563eb',
+              width: 3
+            }
+          },
+          {
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Push',
+            x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            y: [18, 22, 28, 32, 35, 30, 25],
+            line:
+            {
+              color: '#06b6d4',
+              width: 3
+            }
+          }];
+
+          var engagementLayout = {
+            xaxis:
+            {
+              color: '#9ca3af',
+              gridcolor: 'rgba(255,255,255,0.05)'
+            },
+            yaxis:
+            {
+              title: 'Engagement Rate (%)',
+              color: '#9ca3af',
+              gridcolor: 'rgba(255,255,255,0.05)'
+            },
+            margin:
+            {
+              t: 20,
+              r: 20,
+              b: 60,
+              l: 60
+            },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            font:
+            {
+              color: '#ffffff'
+            },
+            showlegend: true,
+            legend:
+            {
+              x: 0,
+              y: 1.1,
+              orientation: 'h'
+            }
+          };
+
+          Plotly.newPlot('engagement-chart', engagementData,
+            engagementLayout,
+            {
+              responsive: true,
+              displayModeBar: false,
+              displaylogo: false
+            });
+
+          var conversionData = [
+          {
+            type: 'funnel',
+            y: ['Impressions', 'Clicks', 'Visits', 'Sign-ups',
+              'Conversions'
+            ],
+            x: [100000, 12500, 8750, 2800, 1650],
+            marker:
+            {
+              color: ['#7c3aed', '#8b5cf6', '#a78bfa', '#c4b5fd',
+                '#ddd6fe'
+              ]
+            },
+            textinfo: 'value+percent initial'
+          }];
+
+          var conversionLayout = {
+            margin:
+            {
+              t: 20,
+              r: 20,
+              b: 20,
+              l: 120
+            },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            font:
+            {
+              color: '#ffffff'
+            }
+          };
+
+          Plotly.newPlot('conversion-chart', conversionData,
+            conversionLayout,
+            {
+              responsive: true,
+              displayModeBar: false,
+              displaylogo: false
+            });
+
+          var locationData = [
+          {
+            type: 'bar',
+            orientation: 'h',
+            y: ['Klang', 'Cheras', 'Subang Jaya', 'Puchong',
+              'Petaling Jaya', 'Kuala Lumpur'
+            ],
+            x: [8750, 7250, 5840, 4920, 4380, 3850],
+            marker:
+            {
+              color: ['#7c3aed', '#8b5cf6', '#a78bfa', '#c4b5fd',
+                '#ddd6fe', '#ede9fe'
+              ]
+            }
+          }];
+
+          var locationLayout = {
+            xaxis:
+            {
+              title: 'Conversions',
+              color: '#9ca3af',
+              gridcolor: 'rgba(255,255,255,0.05)'
+            },
+            yaxis:
+            {
+              color: '#9ca3af',
+              gridcolor: 'rgba(255,255,255,0.05)'
+            },
+            margin:
+            {
+              t: 20,
+              r: 20,
+              b: 60,
+              l: 120
+            },
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)',
+            font:
+            {
+              color: '#ffffff'
+            },
+            showlegend: false
+          };
+
+          Plotly.newPlot('location-chart', locationData, locationLayout,
+          {
+            responsive: true,
+            displayModeBar: false,
+            displaylogo: false
+          });
+
+        }
+        catch (e)
+        {
+          console.error('Chart rendering error:', e);
+        }
+      });
+    </script>
+  </body>
+
+</html>
