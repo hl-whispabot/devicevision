@@ -97,7 +97,7 @@
           /* border: 2px solid #1E3A8A; */
           transform: translateY(-50%);
           border-radius: 8px;
-          padding: 12px;
+          padding: 8px 12px;
           cursor: pointer;
           background: #fff;
           color: black;
@@ -165,13 +165,14 @@
     </script>
 </head>
 <body class="font-sans text-white antialiased">
-    <header id="header" class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10">
-        <nav
-        class="max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between">
-        <div class="flex items-center space-x-3" style="width: 200px"><a href="index.html"><img alt="Logo"
+    <header id="header" class="flex fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10">
+        <div class="flex" style="width: 260px; padding: 30px 30px;"><a href="index.html"><img alt="Logo"
             src="all_white.png"
             id="ikij29"></a></div>
-        <div class="hidden lg:flex items-center space-x-8"><a href="index.html#solutions"
+        <nav id="myTopnav"
+        class="max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between topnav">
+        
+        <div class="lg:flex items-center lg:space-x-8"><a href="index.html#solutions"
             class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"><i
               class="fa-solid fa-lightbulb-on"></i><span>Solutions</span></a><a
             href="index.html#capabilities"
@@ -189,6 +190,9 @@
             href="contact.html"
             class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"><i
               class="fa-solid fa-address-card"></i><span>Contact</span></a>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+              <i class="fa fa-bars"></i>
+            </a>
         </div>
         <div class="flex items-center space-x-4"></div>
       </nav>
