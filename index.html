@@ -337,7 +337,20 @@
           background: #fff;
           color: blue;
         }
-      
+
+        /* Container becomes dropdown */
+        .topnav.responsive {
+          position: absolute;
+          top: 100%;              /* below hamburger/nav bar */
+          right: 1.5rem;          /* align with hamburger */
+          background: rgba(0,0,0,0.85);
+          max-width: 280px;
+          width: 100%;
+          border-radius: 12px;
+          padding: 12px 0;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
         /* Slide-down menu */
         .topnav.responsive a {
           display: block;
@@ -352,10 +365,6 @@
             opacity: 1;
             transform: translateY(0);
           }
-        }
-      
-        .topnav.responsive {
-          padding-top: 10px;           /* Space for hamburger */
         }
       }
     </style>
@@ -391,7 +400,7 @@
   <body class="font-sans text-white antialiased">
     <header id="header"
       class="flex fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10">
-      <div class="flex" style="width: 200px; padding: 10px 10px;"><a href="index.html"><img alt="Logo"
+      <div class="flex" style="width: 200px; padding: 30px 100px;"><a href="index.html"><img alt="Logo"
             src="all_white.png"
             id="ikij29"></a></div>
       <nav id="myTopnav"
