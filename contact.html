@@ -73,7 +73,96 @@
             outline: none;
             box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
         }
+
+        .topnav {
+        position: relative;
+      }
+      
+      /* Hamburger hidden on desktop */
+      .topnav .icon {
+        display: none; 
+      }
+      
+      /* ----- MOBILE ----- */
+      @media screen and (max-width: 600px) {
+        .topnav a:not(.icon) {
+          display: none;               /* hide menu items by default */
+        }
+    
+        .topnav .icon {
+          display: block;
+          position: absolute;
+          right: 1.5rem;
+          top: 50%;
+          /* border: 2px solid #1E3A8A; */
+          transform: translateY(-50%);
+          border-radius: 8px;
+          padding: 12px;
+          cursor: pointer;
+          background: #fff;
+          color: black;
+        }
+
+        /* Container becomes dropdown */
+        .topnav.responsive {
+          position: absolute;
+          top: 50%;              /* below hamburger/nav bar */
+          right: 1.5rem;          /* align with hamburger */
+          background: rgba(0,0,0,0.85);
+          max-width: 280px;
+          width: calc(100% - 3rem);
+          border-radius: 12px;
+          padding: 8px 0px;
+          box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        /* Slide-down menu */
+        .topnav.responsive a {
+          display: block;
+          text-align: left;          /* Center links under hamburger */
+          padding: 12px 30px;
+          opacity: 0;
+          transform: translateY(-10px);
+          animation: slideDown 0.3s forwards;
+        }
+
+        .topnav.responsive .icon {
+          display: none;
+        }
+      
+        @keyframes slideDown {
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      }
     </style>
+    <script>
+      function myFunction() {
+        const x = document.getElementById("myTopnav");
+        x.classList.toggle("responsive");
+      }
+
+      // Close menu when clicking outside
+      document.addEventListener("click", function (event) {
+        const nav = document.getElementById("myTopnav");
+        const icon = document.querySelector("#myTopnav .icon");
+    
+        // If menu is open AND click is outside the nav AND not the hamburger
+        if (nav.classList.contains("responsive") &&
+            !nav.contains(event.target) &&
+            event.target !== icon) {
+    
+          nav.classList.remove("responsive");
+        }
+      });
+    
+      // Prevent the icon click from closing immediately
+      document.querySelector("#myTopnav .icon").addEventListener("click", function (event) {
+        event.stopPropagation();
+      });
+    </script>
 </head>
 <body class="font-sans text-white antialiased">
     <header id="header" class="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-white/10">
