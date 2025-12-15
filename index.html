@@ -364,6 +364,10 @@
           transform: translateY(-10px);
           animation: slideDown 0.3s forwards;
         }
+
+        .topnav.responsive .icon {
+          display: none;
+        }
       
         @keyframes slideDown {
           to {
@@ -411,7 +415,7 @@
       <nav id="myTopnav"
         class="max-w-[1400px] mx-auto px-8 py-4 flex items-center justify-between topnav">
         
-        <div class="lg:flex items-center space-x-8"><a href="#solutions"
+        <div class="lg:flex items-center lg:space-x-8"><a href="#solutions"
             class="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"><i
               class="fa-solid fa-lightbulb-on"></i><span>Solutions</span></a><a
             href="#capabilities"
