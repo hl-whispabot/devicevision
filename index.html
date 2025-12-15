@@ -312,7 +312,10 @@
         }
       }
 
-      
+
+      .topnav {
+        position: relative;
+      }
       
       /* Hamburger hidden on desktop */
       .topnav .icon {
@@ -329,10 +332,11 @@
           display: block;
           position: absolute;
           right: 1.5rem;
-          top: 30px;
+          top: 50%;
           /* border: 2px solid #1E3A8A; */
+          transform: translateY(-50%);
           border-radius: 8px;
-          padding: 12px 12px;
+          padding: 12px;
           cursor: pointer;
           background: #fff;
           color: black;
@@ -341,7 +345,7 @@
         /* Container becomes dropdown */
         .topnav.responsive {
           position: absolute;
-          top: 100%;              /* below hamburger/nav bar */
+          top: 0%;              /* below hamburger/nav bar */
           right: 1.5rem;          /* align with hamburger */
           background: rgba(0,0,0,0.85);
           max-width: 280px;
